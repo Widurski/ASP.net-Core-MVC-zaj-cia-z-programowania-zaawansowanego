@@ -1,1 +1,1 @@
-# ASP.net-Core-MVC-zaj-cia-z-programowania-zaawansowanego
+# ASP.net-Core-MVC-zajecia-z-programowania-zaawansowanego
