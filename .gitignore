@@ -1,0 +1,13 @@
+/bin/
+/publish/
+/tmp/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+obj/
+bin/
+*.db
+.nuget/
+*.log

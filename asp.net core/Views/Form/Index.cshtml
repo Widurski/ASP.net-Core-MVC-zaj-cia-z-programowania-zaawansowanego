@@ -1,0 +1,54 @@
+@{
+    Layout = "_Layout";
+    var submitted = ViewData["Submitted"] as bool? ?? false;
+    var f1 = ViewData["Field1"] as string ?? string.Empty;
+    var f2 = ViewData["Field2"] as string ?? string.Empty;
+    var f3 = ViewData["Field3"] as string ?? string.Empty;
+}
+
+<h2>Prosty formularz</h2>
+
+@if (submitted)
+{
+    <div>
+        <strong>Dziękuję — dane zostały przyjęte.</strong>
+        <ul>
+            <li>Pole 1: @f1</li>
+            <li>Pole 2: @f2</li>
+            <li>Pole 3: @f3</li>
+        </ul>
+    </div>
+}
+
+<form asp-controller="Form" asp-action="Submit" method="post">
+    @Html.AntiForgeryToken()
+    <div>
+        <label>Pole 1: <input type="text" name="field1" value="" /></label>
+    </div>
+    <div>
+        <label>Pole 2: <input type="text" name="field2" value="" /></label>
+    </div>
+    <div>
+        <label>Pole 3: <input type="text" name="field3" value="" /></label>
+    </div>
+    <div>
+        <button type="submit">Wyślij (POST)</button>
+    </div>
+</form>
+
+<hr />
+<h3>Podgląd dostępnych obrazków</h3>
+<div style="display:flex; gap:16px; align-items:center;">
+    <div style="text-align:center;">
+        <a href="/Image/View?name=cat.jpg"><img src="/images/cat.jpg" alt="cat" style="width:120px; height:auto; border:1px solid #ccc;" /></a>
+        <div><a href="/Image/View?name=cat.jpg">cat.jpg</a></div>
+    </div>
+    <div style="text-align:center;">
+        <a href="/Image/View?name=mountain.jpg"><img src="/images/mountain.jpg" alt="mountain" style="width:120px; height:auto; border:1px solid #ccc;" /></a>
+        <div><a href="/Image/View?name=mountain.jpg">mountain.jpg</a></div>
+    </div>
+    <div style="text-align:center;">
+        <a href="/Image/View?name=logo.png"><img src="/images/logo.png" alt="logo" style="width:120px; height:auto; border:1px solid #ccc;" /></a>
+        <div><a href="/Image/View?name=logo.png">logo.png</a></div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">
+	<rect width="100%" height="100%" fill="#ffefef"/>
+	<circle cx="120" cy="120" r="60" fill="#f4a261" />
+	<circle cx="200" cy="90" r="30" fill="#264653" />
+	<rect x="60" y="200" width="220" height="40" fill="#2a9d8f" rx="6" />
+	<text x="50%" y="270" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#333">Cat (cat.jpg)</text>
+</svg>

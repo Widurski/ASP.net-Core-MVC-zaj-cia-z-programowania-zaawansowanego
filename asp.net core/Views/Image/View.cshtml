@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+    var name = ViewData["NameParam"] as string ?? string.Empty;
+    var known = ViewData["KnownImages"] as string[] ?? new string[0];
+}
+
+<h2>Podgląd obrazka</h2>
+
+<p>Parametr name: <strong>@name</strong></p>
+
+@if (!string.IsNullOrEmpty(name))
+{
+    <div>
+        <p>Próbuję wyświetlić obrazek o nazwie <code>@name</code>:</p>
+        <img src="/images/@name" alt="@name" style="max-width:400px; height:auto;" />
+    </div>
+}
+
+<hr />
+<h3>Dostępne obrazki na serwerze</h3>
+<div>
+    @foreach (var img in known)
+    {
+        <div style="display:inline-block; margin:8px; text-align:center;">
+            <img src="/images/@img" alt="@img" style="width:160px; height:auto; display:block;" />
+            <div>@img</div>
+        </div>
+    }
+</div>

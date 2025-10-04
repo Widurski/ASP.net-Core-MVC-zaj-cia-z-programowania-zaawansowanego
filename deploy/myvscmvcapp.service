@@ -1,0 +1,13 @@
+[Unit]
+Description=MyVscMvcApp (published)
+After=network.target
+
+[Service]
+WorkingDirectory=/home/solaris/Dokumenty/asp.net core
+ExecStart=/home/solaris/Dokumenty/asp.net core/publish/MyVscMvcApp --urls "http://0.0.0.0:5005" --contentRoot "/home/solaris/Dokumenty/asp.net core/asp.net core"
+Restart=always
+User=solaris
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
